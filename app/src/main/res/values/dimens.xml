@@ -4,5 +4,9 @@
     <dimen name="button_corner_radius">16dp</dimen>
     <dimen name="button_spacing">16dp</dimen>
     <dimen name="icon_padding">8dp</dimen>
-    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="panel_header_height">56dp</dimen>
+    <dimen name="menu_item_height">61dp</dimen>
+    <dimen name="content_top_margin">24dp</dimen>
 </resources>

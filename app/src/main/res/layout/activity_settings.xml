@@ -34,6 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/shareItem"
         style="@style/Widget.PlaylistMaker.MenuItem" >
 
         <TextView
@@ -46,6 +47,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/supportItem"
         style="@style/Widget.PlaylistMaker.MenuItem" >
 
         <TextView
@@ -58,6 +60,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/userAgreementItem"
         style="@style/Widget.PlaylistMaker.MenuItem" >
 
         <TextView

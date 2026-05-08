@@ -11,8 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.net.toUri
 
 class SettingsActivity : AppCompatActivity() {
-    val supportEmail = "apog2im@gmail.com"
-    val userAgreementUrl = "https://yandex.ru/legal/practicum_offer/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -40,7 +38,7 @@ class SettingsActivity : AppCompatActivity() {
         supportItem.setOnClickListener {
             val supportIntent = Intent(Intent.ACTION_SENDTO)
             supportIntent.data = "mailto:".toUri()
-            supportIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(supportEmail))
+            supportIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.support_email)))
             supportIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.support_subject))
             supportIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.support_text))
             startActivity(supportIntent)
@@ -49,7 +47,7 @@ class SettingsActivity : AppCompatActivity() {
         val userAgreementItem = findViewById<LinearLayout>(R.id.userAgreementItem)
         userAgreementItem.setOnClickListener {
             val agreementIntent = Intent(Intent.ACTION_VIEW,
-                userAgreementUrl.toUri())
+                getString(R.string.user_agreement_url).toUri())
             startActivity(agreementIntent)
         }
     }

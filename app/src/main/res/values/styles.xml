@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.PlaylistMaker.Button.Main" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.PlaylistMaker.Button.Main" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginStart">@dimen/screen_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/screen_horizontal_margin</item>

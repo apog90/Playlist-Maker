@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="menu_item_icon_tint">@color/white</color>
+    <color name="input_background_color">@color/white</color>
+    <color name="input_text_color">@color/black</color>
 </resources>

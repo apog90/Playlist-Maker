@@ -18,58 +18,32 @@
         app:titleTextColor="?attr/colorOnSurface"
         app:contentInsetStartWithNavigation="12dp" />
 
-    <LinearLayout
+    <com.google.android.material.switchmaterial.SwitchMaterial
         style="@style/Widget.PlaylistMaker.MenuItem"
-        android:layout_marginTop="@dimen/content_top_margin" >
+        android:layout_marginTop="@dimen/content_top_margin"
+        android:checked="false"
+        android:contentDescription="@null"
+        android:text="@string/theme_dark" />
 
-        <TextView
-            style="@style/Widget.PlaylistMaker.MenuItem.Label"
-            android:text="@string/theme_dark" />
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:contentDescription="@null" />
-    </LinearLayout>
-
-    <LinearLayout
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/shareItem"
-        style="@style/Widget.PlaylistMaker.MenuItem" >
+        style="@style/Widget.PlaylistMaker.MenuItem"
+        android:drawableEnd="@drawable/ic_share_24"
+        android:text="@string/share"
+        app:drawableTint="@color/menu_item_icon_tint" />
 
-        <TextView
-            style="@style/Widget.PlaylistMaker.MenuItem.Label"
-            android:text="@string/share" />
-
-        <ImageView
-            style="@style/Widget.PlaylistMaker.MenuItem.Icon"
-            android:src="@drawable/ic_share_24" />
-    </LinearLayout>
-
-    <LinearLayout
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/supportItem"
-        style="@style/Widget.PlaylistMaker.MenuItem" >
+        style="@style/Widget.PlaylistMaker.MenuItem"
+        android:drawableEnd="@drawable/ic_support_24"
+        android:text="@string/support"
+        app:drawableTint="@color/menu_item_icon_tint" />
 
-        <TextView
-            style="@style/Widget.PlaylistMaker.MenuItem.Label"
-            android:text="@string/support" />
-
-        <ImageView
-            style="@style/Widget.PlaylistMaker.MenuItem.Icon"
-            android:src="@drawable/ic_support_24" />
-    </LinearLayout>
-
-    <LinearLayout
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/userAgreementItem"
-        style="@style/Widget.PlaylistMaker.MenuItem" >
-
-        <TextView
-            style="@style/Widget.PlaylistMaker.MenuItem.Label"
-            android:text="@string/user_agreement" />
-
-        <ImageView
-            style="@style/Widget.PlaylistMaker.MenuItem.Icon"
-            android:src="@drawable/ic_arrow_forward_24" />
-    </LinearLayout>
+        style="@style/Widget.PlaylistMaker.MenuItem"
+        android:drawableEnd="@drawable/ic_arrow_forward_24"
+        android:text="@string/user_agreement"
+        app:drawableTint="@color/menu_item_icon_tint" />
 
 </LinearLayout>

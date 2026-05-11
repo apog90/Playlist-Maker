@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
@@ -12,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 
 class SearchActivity : AppCompatActivity() {
 
@@ -53,7 +53,7 @@ class SearchActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 searchQuery = s?.toString() ?: ""
-                clearButton.visibility = if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
+                clearButton.isVisible = !s.isNullOrEmpty()
             }
 
             override fun afterTextChanged(s: Editable?) {

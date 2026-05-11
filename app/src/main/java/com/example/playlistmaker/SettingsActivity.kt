@@ -3,7 +3,7 @@ package com.example.playlistmaker
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,7 +26,7 @@ class SettingsActivity : AppCompatActivity() {
             finish()
         }
 
-        val shareItem = findViewById<LinearLayout>(R.id.shareItem)
+        val shareItem = findViewById<View>(R.id.shareItem)
         shareItem.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
@@ -34,7 +34,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, getString(R.string.share)))
         }
 
-        val supportItem = findViewById<LinearLayout>(R.id.supportItem)
+        val supportItem = findViewById<View>(R.id.supportItem)
         supportItem.setOnClickListener {
             val supportIntent = Intent(Intent.ACTION_SENDTO)
             supportIntent.data = "mailto:".toUri()
@@ -44,7 +44,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(supportIntent)
         }
 
-        val userAgreementItem = findViewById<LinearLayout>(R.id.userAgreementItem)
+        val userAgreementItem = findViewById<View>(R.id.userAgreementItem)
         userAgreementItem.setOnClickListener {
             val agreementIntent = Intent(Intent.ACTION_VIEW,
                 getString(R.string.user_agreement_url).toUri())

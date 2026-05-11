@@ -19,7 +19,7 @@ class SearchActivity : AppCompatActivity() {
 
     private var searchQuery: String = QUERY_DEF
 
-    private val tracks = arrayListOf(
+    private val tracks = listOf(
         Track(
             trackName = "Smells Like Teen SpiritSmells Like Teen SpiritSmells Like Teen Spirit",
             artistName = "Nirvana\"Nirvana\"Nirvana\"Nirvana\"Nirvana\"Nirvana\"Nirvana",

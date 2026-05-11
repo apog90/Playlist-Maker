@@ -20,6 +20,23 @@
         <item name="iconTint">@color/black</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.PlaylistMaker.TrackArtwork" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/track_artwork_corner</item>
+    </style>
+
+    <style name="Widget.PlaylistMaker.SearchField" parent="">
+        <item name="android:background">@drawable/search_input_background</item>
+        <item name="android:drawableStart">@drawable/ic_search_16</item>
+        <item name="android:drawablePadding">@dimen/icon_padding</item>
+        <item name="android:paddingStart">@dimen/icon_padding</item>
+        <item name="android:paddingEnd">@dimen/input_action_space</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.PlaylistMaker.Body</item>
+        <item name="android:textColor">@color/input_text_color</item>
+    </style>
+
     <style name="Widget.PlaylistMaker.MenuItem" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/menu_item_height</item>

@@ -20,6 +20,11 @@
         <item name="iconTint">@color/black</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.PlaylistMaker.TrackArtwork" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/track_artwork_corner</item>
+    </style>
+
     <style name="Widget.PlaylistMaker.MenuItem" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/menu_item_height</item>

@@ -7,4 +7,6 @@
     <color name="menu_item_icon_tint">@color/yp_text_gray</color>
     <color name="input_background_color">#E6E8EB</color>
     <color name="input_text_color">@color/yp_text_gray</color>
+    <color name="track_secondary_color">@color/yp_text_gray</color>
+    <color name="track_placeholder_background">@color/input_background_color</color>
 </resources>

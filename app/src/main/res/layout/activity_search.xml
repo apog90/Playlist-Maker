@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    android:background="?attr/colorSurface"
+    tools:context=".SearchActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/panel_header_height"
+        app:navigationIcon="@drawable/ic_arrow_back_full_24"
+        app:navigationIconTint="?attr/colorOnSurface"
+        app:title="@string/search"
+        app:titleTextAppearance="@style/TextAppearance.PlaylistMaker.Toolbar"
+        app:titleTextColor="?attr/colorOnSurface"
+        app:contentInsetStartWithNavigation="12dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/button_spacing"
+        android:layout_marginEnd="@dimen/button_spacing"
+        android:layout_marginTop="@dimen/icon_padding">
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_input_background"
+            android:drawableStart="@drawable/ic_search_16"
+            android:drawablePadding="@dimen/icon_padding"
+            android:paddingStart="@dimen/icon_padding"
+            android:paddingEnd="40dp"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:fontFamily="@font/ys_display_regular"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/input_text_color"
+            android:autofillHints="@string/search" />
+
+        <ImageView
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/icon_padding"
+            android:src="@drawable/ic_close_16"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/search"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

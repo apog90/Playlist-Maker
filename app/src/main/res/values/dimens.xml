@@ -9,4 +9,5 @@
     <dimen name="panel_header_height">56dp</dimen>
     <dimen name="menu_item_height">61dp</dimen>
     <dimen name="content_top_margin">24dp</dimen>
+    <dimen name="input_corner_radius">8dp</dimen>
 </resources>

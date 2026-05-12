@@ -91,12 +91,57 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/refreshButton"
-                style="@style/Widget.PlaylistMaker.RefreshButton"
+                style="@style/Widget.PlaylistMaker.BaseButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:layout_marginTop="@dimen/refresh_button_top_margin"
                 android:text="@string/refresh"
                 android:visibility="gone" />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/searchHistoryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_top_margin"
+                android:gravity="center"
+                android:text="@string/search_history_title"
+                android:textAppearance="@style/TextAppearance.PlaylistMaker.Placeholder"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchHistoryList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/icon_padding"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@id/searchHistoryTitle"
+                app:layout_constraintBottom_toTopOf="@id/clearHistoryButton"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clearHistoryButton"
+                style="@style/Widget.PlaylistMaker.BaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/refresh_button_top_margin"
+                android:layout_marginBottom="@dimen/refresh_button_top_margin"
+                android:text="@string/search_history_clear"
+                app:layout_constraintTop_toBottomOf="@id/searchHistoryList"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </LinearLayout>

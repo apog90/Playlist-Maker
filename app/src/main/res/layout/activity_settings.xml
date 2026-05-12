@@ -19,6 +19,7 @@
         app:contentInsetStartWithNavigation="12dp" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/themeSwitcher"
         style="@style/Widget.PlaylistMaker.MenuItem"
         android:layout_marginTop="@dimen/content_top_margin"
         android:checked="false"

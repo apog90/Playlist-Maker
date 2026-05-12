@@ -99,11 +99,10 @@
                 android:visibility="gone" />
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/searchHistory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:visibility="gone">
 
             <TextView
@@ -114,25 +113,35 @@
                 android:gravity="center"
                 android:text="@string/search_history_title"
                 android:textAppearance="@style/TextAppearance.PlaylistMaker.Placeholder"
-                android:textColor="?attr/colorOnSurface" />
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/searchHistoryList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="@dimen/icon_padding"
                 android:clipToPadding="false"
-                android:scrollbars="vertical" />
+                app:layout_constraintTop_toBottomOf="@id/searchHistoryTitle"
+                app:layout_constraintBottom_toTopOf="@id/clearHistoryButton"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_bias="0" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/clearHistoryButton"
                 style="@style/Widget.PlaylistMaker.BaseButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/button_height"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/refresh_button_top_margin"
                 android:layout_marginBottom="@dimen/refresh_button_top_margin"
-                android:text="@string/search_history_clear" />
-        </LinearLayout>
+                android:text="@string/search_history_clear"
+                app:layout_constraintTop_toBottomOf="@id/searchHistoryList"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </LinearLayout>

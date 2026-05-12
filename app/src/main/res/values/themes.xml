@@ -28,4 +28,36 @@
         <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textColor">@color/track_secondary_color</item>
     </style>
+
+    <style name="TextAppearance.PlaylistMaker.Placeholder" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="fontFamily">@font/ys_display_medium</item>
+        <item name="android:textSize">@dimen/text_size_placeholder</item>
+        <item name="android:lineHeight">@dimen/text_size_placeholder</item>
+    </style>
+
+    <style name="TextAppearance.PlaylistMaker.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="fontFamily">@font/ys_display_medium</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:lineHeight">@dimen/text_size_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.PlaylistMaker.RefreshButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">@dimen/refresh_button_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/refresh_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/refresh_button_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/refresh_button_vertical_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="cornerRadius">@dimen/refresh_button_corner_radius</item>
+        <item name="backgroundTint">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorSurface</item>
+        <item name="android:textAppearance">@style/TextAppearance.PlaylistMaker.Button</item>
+    </style>
 </resources>

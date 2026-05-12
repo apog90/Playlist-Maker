@@ -12,4 +12,7 @@
     <string name="support_text" translatable="false">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="user_agreement_url" translatable="false">https://yandex.ru/legal/practicum_offer/</string>
     <string name="support_email" translatable="false">apog2im@gmail.com</string>
+    <string name="nothing_found" translatable="false">Ничего не нашлось</string>
+    <string name="connection_error" translatable="false">Проблемы со связью\n\nЗагрузка не удалась. Проверьте подключение к интернету</string>
+    <string name="refresh" translatable="false">Обновить</string>
 </resources>

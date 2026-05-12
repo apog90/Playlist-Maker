@@ -6,7 +6,8 @@
     <color name="yp_text_gray">#AEAFB4</color>
     <color name="menu_item_icon_tint">@color/yp_text_gray</color>
     <color name="input_background_color">#E6E8EB</color>
-    <color name="input_text_color">@color/yp_text_gray</color>
+    <color name="input_text_color">@color/black</color>
     <color name="track_secondary_color">@color/yp_text_gray</color>
     <color name="track_placeholder_background">@android:color/transparent</color>
+    <color name="placeholder_icon_color">@color/black</color>
 </resources>

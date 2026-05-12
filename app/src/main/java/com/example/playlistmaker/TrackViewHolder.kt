@@ -6,6 +6,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
+import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.TimeZone
 
 class TrackViewHolder(
     parent: ViewGroup,
@@ -18,10 +21,13 @@ class TrackViewHolder(
     private val artistName: TextView = itemView.findViewById(R.id.artistName)
     private val trackTime: TextView = itemView.findViewById(R.id.trackTime)
 
+    private val durationFormatter = SimpleDateFormat("mm:ss", Locale.getDefault())
+        .apply { timeZone = TimeZone.getTimeZone("UTC") }
+
     fun bind(track: Track) {
         trackName.text = track.trackName
         artistName.text = track.artistName
-        trackTime.text = track.trackTime
+        trackTime.text = track.trackTimeMillis?.let { durationFormatter.format(it) }.orEmpty()
         Glide.with(itemView)
             .load(track.artworkUrl100)
             .placeholder(R.drawable.placeholder_track)

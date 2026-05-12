@@ -18,4 +18,12 @@
     <dimen name="input_height">36dp</dimen>
     <dimen name="input_action_space">40dp</dimen>
     <dimen name="content_inset_compact">12dp</dimen>
+    <dimen name="placeholder_top_margin">210dp</dimen>
+    <dimen name="placeholder_text_spacing">16dp</dimen>
+    <dimen name="text_size_placeholder">19sp</dimen>
+    <dimen name="refresh_button_top_margin">24dp</dimen>
+    <dimen name="refresh_button_horizontal_padding">14dp</dimen>
+    <dimen name="refresh_button_vertical_padding">10dp</dimen>
+    <dimen name="refresh_button_corner_radius">54dp</dimen>
+    <dimen name="text_size_button">14sp</dimen>
 </resources>

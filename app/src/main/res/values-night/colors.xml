@@ -4,4 +4,5 @@
     <color name="input_background_color">@color/white</color>
     <color name="input_text_color">@color/black</color>
     <color name="track_secondary_color">@color/white</color>
+    <color name="placeholder_icon_color">@color/white</color>
 </resources>

@@ -91,12 +91,48 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/refreshButton"
-                style="@style/Widget.PlaylistMaker.RefreshButton"
+                style="@style/Widget.PlaylistMaker.BaseButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:layout_marginTop="@dimen/refresh_button_top_margin"
                 android:text="@string/refresh"
                 android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/searchHistoryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_top_margin"
+                android:gravity="center"
+                android:text="@string/search_history_title"
+                android:textAppearance="@style/TextAppearance.PlaylistMaker.Placeholder"
+                android:textColor="?attr/colorOnSurface" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchHistoryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/icon_padding"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clearHistoryButton"
+                style="@style/Widget.PlaylistMaker.BaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/refresh_button_top_margin"
+                android:layout_marginBottom="@dimen/refresh_button_top_margin"
+                android:text="@string/search_history_clear" />
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>

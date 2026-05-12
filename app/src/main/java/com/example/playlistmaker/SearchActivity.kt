@@ -34,8 +34,13 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var placeholderImage: ImageView
     private lateinit var placeholderText: TextView
     private lateinit var refreshButton: View
+    private lateinit var historyView: View
+    private lateinit var historyRecyclerView: RecyclerView
 
-    private val adapter = TrackAdapter()
+    private lateinit var searchHistory: SearchHistory
+
+    private val adapter = TrackAdapter(onTrackClick = { track -> onTrackSelected(track) })
+    private val historyAdapter = TrackAdapter(onTrackClick = { track -> onTrackSelected(track) })
 
     companion object {
         const val SEARCH_QUERY = "SEARCH_QUERY"
@@ -64,9 +69,17 @@ class SearchActivity : AppCompatActivity() {
         placeholderImage = findViewById(R.id.placeholderImage)
         placeholderText = findViewById(R.id.placeholderText)
         refreshButton = findViewById(R.id.refreshButton)
+        historyView = findViewById(R.id.searchHistory)
+        historyRecyclerView = findViewById(R.id.searchHistoryList)
+        val clearHistoryButton = findViewById<View>(R.id.clearHistoryButton)
+
+        searchHistory = SearchHistory((application as App).sharedPrefs)
 
         tracksRecyclerView.layoutManager = LinearLayoutManager(this)
         tracksRecyclerView.adapter = adapter
+
+        historyRecyclerView.layoutManager = LinearLayoutManager(this)
+        historyRecyclerView.adapter = historyAdapter
 
         clearButton.setOnClickListener {
             inputEditText.setText("")
@@ -74,6 +87,15 @@ class SearchActivity : AppCompatActivity() {
                 getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(inputEditText.windowToken, 0)
             clearScreen()
+        }
+
+        clearHistoryButton.setOnClickListener {
+            searchHistory.clear()
+            updateHistoryVisibility()
+        }
+
+        inputEditText.setOnFocusChangeListener { _, _ ->
+            updateHistoryVisibility()
         }
 
         inputEditText.setOnEditorActionListener { _, actionId, _ ->
@@ -99,6 +121,7 @@ class SearchActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 searchQuery = s?.toString() ?: ""
                 clearButton.isVisible = !s.isNullOrEmpty()
+                updateHistoryVisibility()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -155,6 +178,7 @@ class SearchActivity : AppCompatActivity() {
         adapter.submitList(tracks)
         tracksRecyclerView.isVisible = true
         placeholder.isGone = true
+        historyView.isGone = true
     }
 
     private fun showNothingFound() {
@@ -164,6 +188,7 @@ class SearchActivity : AppCompatActivity() {
         placeholderText.setText(R.string.nothing_found)
         refreshButton.isGone = true
         placeholder.isVisible = true
+        historyView.isGone = true
     }
 
     private fun showConnectionError() {
@@ -173,11 +198,32 @@ class SearchActivity : AppCompatActivity() {
         placeholderText.setText(R.string.connection_error)
         refreshButton.isVisible = true
         placeholder.isVisible = true
+        historyView.isGone = true
     }
 
     private fun clearScreen() {
         adapter.submitList(emptyList())
         tracksRecyclerView.isGone = true
         placeholder.isGone = true
+        updateHistoryVisibility()
+    }
+
+    private fun onTrackSelected(track: Track) {
+        searchHistory.add(track)
+    }
+
+    private fun updateHistoryVisibility() {
+        val history = searchHistory.getHistory()
+        val shouldShow = inputEditText.hasFocus() &&
+            inputEditText.text.isNullOrEmpty() &&
+            history.isNotEmpty()
+        if (shouldShow) {
+            historyAdapter.submitList(history)
+            tracksRecyclerView.isGone = true
+            placeholder.isGone = true
+            historyView.isVisible = true
+        } else {
+            historyView.isGone = true
+        }
     }
 }

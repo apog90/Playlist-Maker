@@ -8,12 +8,14 @@ class TrackAdapter(
     tracks: List<Track> = emptyList(),
 ) : RecyclerView.Adapter<TrackViewHolder>() {
 
-    var tracks: List<Track> = tracks
-        @SuppressLint("NotifyDataSetChanged")
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+    private var tracks: List<Track> = tracks
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun submitList(newTracks: List<Track>) {
+        if (tracks == newTracks) return
+        tracks = newTracks
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder =
         TrackViewHolder(parent)

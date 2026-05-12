@@ -40,7 +40,6 @@ class SearchActivity : AppCompatActivity() {
     companion object {
         const val SEARCH_QUERY = "SEARCH_QUERY"
         const val QUERY_DEF = ""
-        private const val HTTP_OK = 200
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -133,7 +132,7 @@ class SearchActivity : AppCompatActivity() {
                 call: Call<TracksResponse>,
                 response: Response<TracksResponse>,
             ) {
-                if (response.code() == HTTP_OK) {
+                if (response.isSuccessful) {
                     val results = response.body()?.results.orEmpty()
                     if (results.isEmpty()) {
                         showNothingFound()
@@ -153,13 +152,13 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun showResults(tracks: List<Track>) {
-        adapter.tracks = tracks
+        adapter.submitList(tracks)
         tracksRecyclerView.isVisible = true
         placeholder.isGone = true
     }
 
     private fun showNothingFound() {
-        adapter.tracks = emptyList()
+        adapter.submitList(emptyList())
         tracksRecyclerView.isGone = true
         placeholderImage.setImageResource(R.drawable.ic_nothing_found_120)
         placeholderText.setText(R.string.nothing_found)
@@ -168,7 +167,7 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun showConnectionError() {
-        adapter.tracks = emptyList()
+        adapter.submitList(emptyList())
         tracksRecyclerView.isGone = true
         placeholderImage.setImageResource(R.drawable.ic_no_internet_120)
         placeholderText.setText(R.string.connection_error)
@@ -177,7 +176,7 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun clearScreen() {
-        adapter.tracks = emptyList()
+        adapter.submitList(emptyList())
         tracksRecyclerView.isGone = true
         placeholder.isGone = true
     }

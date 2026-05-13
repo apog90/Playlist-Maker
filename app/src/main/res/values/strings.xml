@@ -17,4 +17,14 @@
     <string name="refresh" translatable="false">Обновить</string>
     <string name="search_history_title" translatable="false">Вы искали</string>
     <string name="search_history_clear" translatable="false">Очистить историю</string>
+    <string name="player_back_button" translatable="false">Назад</string>
+    <string name="player_add_to_playlist_button" translatable="false">Добавить в плейлист</string>
+    <string name="player_favorite_button" translatable="false">Добавить в избранное</string>
+    <string name="player_play_button" translatable="false">Воспроизвести</string>
+    <string name="player_duration_label" translatable="false">Длительность</string>
+    <string name="player_album_label" translatable="false">Альбом</string>
+    <string name="player_year_label" translatable="false">Год</string>
+    <string name="player_genre_label" translatable="false">Жанр</string>
+    <string name="player_country_label" translatable="false">Страна</string>
+    <string name="player_default_progress" translatable="false">00:30</string>
 </resources>

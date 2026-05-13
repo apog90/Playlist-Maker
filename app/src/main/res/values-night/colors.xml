@@ -5,4 +5,9 @@
     <color name="input_text_color">@color/black</color>
     <color name="track_secondary_color">@color/white</color>
     <color name="placeholder_icon_color">@color/white</color>
+    <color name="player_background">@color/black</color>
+    <color name="player_primary_text">@color/white</color>
+    <color name="player_control_bg">#40FFFFFF</color>
+    <color name="player_play_bg">@color/white</color>
+    <color name="player_play_icon">@color/black</color>
 </resources>
